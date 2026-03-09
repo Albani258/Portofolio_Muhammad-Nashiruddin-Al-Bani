@@ -1,0 +1,365 @@
+---
+title: "Topik 6 Model Portofolio"
+author: "Hajran"
+date: "2024-03-30"
+output: word_document
+---
+
+PORTOFOLIO OPTIMIZATION USINNG Harry Markowitz Model (HM Model)
+```{r}
+
+# Load libraries
+library(tseries)
+library(PerformanceAnalytics)
+library(zoo)
+library(xts)
+
+data_MEDC <- read.csv("E:/Kuliah/Semester 6/Statistika Keuangan/MEDC.JK.csv")
+data_AKRA <- read.csv("E:/Kuliah/Semester 6/Statistika Keuangan/AKRA.JK.csv")
+data_ADMR <- read.csv("E:/Kuliah/Semester 6/Statistika Keuangan/ADMR.JK.csv")
+
+# Memfilter kolom "Date" dan "Close" 
+AKRA <- data_AKRA[, c("Date", "Close")]
+ADMR <- data_ADMR[, c("Date", "Close")]
+MEDC <- data_MEDC[, c("Date", "Close")]
+
+# Menggabungkan data menjadi satu frame data
+stocks <- data.frame(AKRA, ADMR, MEDC)
+
+# Konversi data.frame ke xts untuk masing-masing saham
+AKRA_xts <- xts(AKRA$Close, order.by=as.Date(AKRA$Date))
+ADMR_xts <- xts(ADMR$Close, order.by=as.Date(ADMR$Date))
+MEDC_xts <- xts(MEDC$Close, order.by=as.Date(MEDC$Date))
+
+# Menggabungkan data menjadi satu objek xts
+stocks_xts <- merge(AKRA_xts, ADMR_xts, MEDC_xts)
+
+
+head(stocks_xts,5)
+```
+```{r}
+str(stocks_xts)
+
+```
+
+```{r}
+L <- nrow(ADMR)
+J <- L - 2
+Ekspektasi <- rep(0, J)
+risk <- rep(0, J)
+JB_pval <- rep(0, J)
+
+for (j in 1:J) {
+  Rj <- stocks_xts[, 2 + j]
+  Ekspektasi[j] <- mean(Rj)
+  risk[j] <- sqrt(var(Rj))
+  jb <- jarque.bera.test(Rj)
+  JB_pval[j] <- jb$p.value
+}
+
+
+normtest <- ifelse(JB_pval > 0.01, "Normal", "Tidak Normal")
+normtest
+
+```
+
+```{r}
+#number of securities
+ns <- ncol(stocks_xts)
+ns
+#Getting return (we have taken log return)
+ret <- apply(log(stocks_xts), 2, diff)
+tail(ret, 20)
+```
+Global Minimum Variance Portofolio (gmv)
+```{r}
+#expected return, var, sd
+#daily expected return each stock
+er <- apply(ret, 2, mean) 
+print("expected return")
+er
+# Menghitung varians
+variance <- apply(ret, 2, var)
+print("varians")
+variance
+
+#daily sd
+std <- apply(ret, 2, sd) 
+print("standar deviasi")
+std
+
+
+#covariance matrix
+covm <- cov(ret)
+covm
+```
+
+
+```{r}
+Am <- rbind(2*covm, rep(1, ns))
+Am <- cbind(Am, c(rep(1, ns), 0))
+b <- c( rep(0, ns), 1)
+Am
+b
+```
+```{r}
+# Menentukan bobot investasi optimal menggunakan metode Lagrange
+lambda <- 1
+mu <- 0
+
+objective_function <- function(w) {
+  # Calculate portfolio variance
+  portfolio_variance <- sum(w^2 * variance) + 2 * sum(w * covm * w)
+  
+  # Penalty for negative weights
+  penalty <- sum(max(0, -w))
+  
+  # Constraint: weights sum to 1
+  constraint <- sum(w) - 1
+  
+  # Combine terms with weights
+  lagrange_function <- portfolio_variance + penalty + 1000 * constraint^2
+  
+  # Return the Lagrangian function
+  return(lagrange_function)
+}
+
+# Mencari bobot investasi optimal dengan minimisasi fungsi objektif
+optimal_weights <- optim(par = rep(1/3, 3), fn = objective_function, method = "Nelder-Mead")$par
+
+# Menampilkan bobot investasi optimal
+print("Bobot Investasi Optimal:")
+print(optimal_weights)
+
+# Menghitung expected return portofolio optimal
+expected_return_portfolio <- sum(optimal_weights * expected_return)
+print("Expected Return Portofolio Optimal:")
+print(expected_return_portfolio)
+
+# Menghitung variansi portofolio optimal
+variance_portfolio <- sum(optimal_weights^2 * variance_return) + 2 * sum(optimal_weights * covariance_matrix * optimal_weights)
+
+# Calculate portfolio standard deviation
+portfolio_stddev <- sqrt(portfolio_variance)
+
+print("Variansi Portofolio Optimal:")
+print(variance_portfolio)
+
+print("Standard deviation of the optimal portfolio:")
+print(portfolio_stddev)
+```
+
+```{r}
+# Define expected returns and covariance matrix
+expected_return <- c(0.0004252017, 0.0011062463, 0.0015408965)
+covariance_matrix <- matrix(c(
+  0.0003404731, 0.0002079146, 0.0004441593,
+  0.0002079146, 0.0022609279, 0.0004368177,
+  0.0004441593, 0.0004368177, 0.0024476290
+), nrow = 3, ncol = 3)
+
+# Define optimal portfolio weights
+optimal_weights <- c(0.5610815, 0.2326915, 0.2062261)
+
+# Calculate portfolio variance
+portfolio_variance <- sum(optimal_weights^2 * covariance_matrix) + 2 * sum(optimal_weights * covariance_matrix * optimal_weights)
+
+# Calculate portfolio standard deviation
+portfolio_stddev <- sqrt(portfolio_variance)
+
+# Print results
+print("Variance of the optimal portfolio:")
+print(portfolio_variance)
+
+print("Standard deviation of the optimal portfolio:")
+print(portfolio_stddev)
+```
+
+
+
+Koefisien korelasi
+```{r}
+# Menghitung koefisien korelasi
+correlation <- cor(ret)
+
+# Menampilkan koefisien korelasi
+print("Koefisien Korelasi:")
+correlation
+
+```
+Proporsi dana awal
+```{r}
+# Jumlah perusahaan dalam portofolio
+n <- ncol(ret)
+
+# Menghitung proporsi dana awal untuk setiap perusahaan
+initial_allocation <- rep(1/n, n)
+
+# Menampilkan proporsi dana awal
+print("Proporsi Dana Awal:")
+initial_allocation
+
+```
+```{r}
+# Menghitung matriks invers varians kovarians
+inverse_covariance <- solve(covm)
+
+# Menampilkan matriks invers varians kovarians
+print("Matriks Invers Varians Kovarians:")
+inverse_covariance
+
+```
+
+```{r}
+w.gmv <- solve(Am) %*% b 
+w.gmv <- w.gmv[-(ns+1), ]  #last value is lambda constraint. Hence not relevant
+sum(w.gmv) #sum of weights are 1
+w.gmv
+```
+Return Portofolio
+```{r}
+# Menghitung return portofolio
+return_portfolio <- w.gmv %*% er
+
+# Menampilkan return portofolio
+print("Return Portofolio:")
+return_portfolio
+
+```
+
+Risiko Portofolio
+```{r}
+# Menghitung risiko portofolio
+risk_portfolio <- sqrt(t(w.gmv) %*% covm %*% w.gmv)
+
+# Menampilkan risiko portofolio
+print("Risiko Portofolio:")
+risk_portfolio
+
+```
+
+```{r}
+#variance of portfolio (Minimum variance)
+print("variance of portfolio (Minimum variance")
+(var.gmv <- t(w.gmv) %*% covm %*% w.gmv)
+
+print("expected return on minimum global variance portfolio")
+#expected return on minimum global variance portfolio
+(ret.gmv <- t(w.gmv) %*% er)
+```
+Efficient Portofolio (ep)
+```{r}
+#Efficient Portofolio (ep)
+#we derived efficient for given return (ie. minimum risk for given return)
+##alternate solution
+uv <- rep(1, ns) #unit vector
+w.gmv2 <- (solve(covm) %*% uv) * c(solve( (t(uv) %*% solve(covm) %*% uv)))
+
+u0 <- er[3] #return that we want to achieved on our portfolio
+if(u0 < ret.gmv) {
+  message("#u0 should be greater than return on minimum variance portfolio")
+}
+u0
+
+M <- cbind(er, uv)
+M
+B <-  t(M) %*% solve(covm) %*% M
+mu.tilde <- c(u0, 1)
+B
+
+#weight of efficient portfolio
+(w.ep <- solve(covm) %*% M %*% solve(B) %*% mu.tilde)
+w.ep
+#portfolio expected return
+(ret.ep <- t(er) %*% w.ep) #equals to Auto expected return
+ret.ep
+#portofolio variance
+(var.ep <- t(w.ep) %*% covm %*% w.ep)  # less than auto var but more than minimum variance portfolio
+var.ep
+
+```
+Efficient Frontier
+```{r}
+# Define expected returns and covariance matrix
+er <- c(0.12, 0.15, 0.18)
+covm <- matrix(c(0.0225, 0.015, 0.0125,
+                   0.015, 0.03, 0.0225,
+                   0.0125, 0.0225, 0.04), nrow = 3)
+
+# Calculate minimum variance portfolio weights using Lagrange Method
+n <- nrow(covm)
+A <- cov(covm)
+b <- rep(1, n)
+lambda <- 0
+
+# Define the objective function explicitly returning a value
+objective <- function(w) {
+  return(0.5 * t(w) %*% A %*% w - lambda * (sum(w) - 1)^2)
+}
+
+# Solve system of equations using optim() function
+optim(objective, w = rep(1/n, n), method = "Nelder-Mead")
+```
+
+
+```{r}
+
+w1 <- .4
+w <- seq(from = -.5, to = 1.5, by = .01) #various combination of weights
+
+#first method
+eff <- function(w1) {
+  z <- w1 * w.gmv + (1 - w1) * w.ep
+  c(ret = t(z) %*% er  * 248 , sd = sqrt(t(z) %*% covm %*% z * 248))
+}
+comb <- cbind(w, t(sapply(w, FUN = eff)))
+comb
+
+efficient <- comb[, "ret"] > c(ret.gmv * 248)
+efficient
+xlim <- c(min(comb[, "sd"]), max(comb[, "sd"]))
+xlim
+ylim <- c(min(comb[, "ret"]), max(comb[, "ret"]))
+ylim
+col <- ifelse(efficient, "blue", "red")
+
+plot(comb[ , "ret"] ~ comb[, "sd"], col = col, xlim = xlim, ylim = ylim, 
+     xlab = "Portfolio RisK", ylab = "Portfolio Return", pch = 16, main = "Efficient Frontier", 
+     cex = .7)
+
+```
+
+Optimal Portofolio: Maximizing Sharpe Ratio
+```{r}
+# Optimal Portfolio: Maximizing Sharpe Ratio
+#SR = (mu - rf) / sigma
+
+rfree <- .00 / 248  #daily risk free return 
+#assuming zero risk free rate of interest
+
+(w.sr <- solve(covm) %*% (er - rfree) / c(t(uv) %*% solve(covm) %*% (er - rfree))) #weights of optimal portfolio
+```
+
+```{r}
+
+(ret.sr <- t(w.sr) %*% er ) #return
+(var.sr <- t(w.sr)%*% covm %*% w.sr) #portfolio variance
+
+```
+
+Line of Tangency
+```{r}
+
+#plotting results
+comb <- rbind(comb, c(NA, ret.sr * 248, sqrt(var.sr * 248)))
+col <- c(ifelse(efficient, "blue", "red"), "green")
+xlim <- c(0.15, max(comb[, "sd"]))
+ylim <- c(0.10, max(comb[, "ret"]))
+cex <- c(ifelse(efficient, .6, .6), 1.2)
+pch <- c(rep(1, nrow(comb) - 1), 16)
+plot(comb[ , "ret"] ~ comb[, "sd"], col = col, xlim = xlim, ylim = ylim, 
+     xlab = "Portfolio RisK", ylab = "Portfolio Return", pch = pch, main = "Efficient Frontier", 
+     cex = cex)
+abline(a = rfree, b = ret.sr * 248 / sqrt(var.sr * 248), lty = 2)
+
+```
