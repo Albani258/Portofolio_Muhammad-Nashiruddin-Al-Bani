@@ -1,7 +1,7 @@
 ﻿# Project 08: Optimal Portfolio Analysis in Energy Sector Using Markowitz Model
 
 ## Deskripsi Proyek
-Analisis alokasi portofolio optimal di sektor energi Indonesia menggunakan Markowitz Mean-Variance Model. Dilatarbelakangi oleh krisis energi global akibat perang Rusia-Ukraina.
+Analisis alokasi portofolio optimal di sektor energi Indonesia menggunakan Markowitz Mean-Variance Model.
 
 ## Saham yang Dianalisis
 | Kode | Perusahaan | Bobot Optimal |
@@ -17,23 +17,17 @@ Analisis alokasi portofolio optimal di sektor energi Indonesia menggunakan Marko
 | Portfolio Risk (Std Dev) | 0.0428 |
 
 ## Teknologi yang Digunakan
-| Tools | Keterangan |
-|-------|------------|
-| RStudio | Environment analisis |
-| tseries | Analisis time series |
-| PerformanceAnalytics | Analisis kinerja portofolio |
-| Yahoo Finance | Sumber data harga saham |
-
-## Periode Data
-26 April 2023 – 23 April 2024 (daily closing prices)
+- **RStudio** - Environment analisis
+- **tseries** - Analisis time series
+- **PerformanceAnalytics** - Analisis kinerja portofolio
 
 ## Struktur Folder
 | Folder | Isi |
 |--------|-----|
-| 01_Dokumentasi | Laporan PDF, PPT presentasi, dokumentasi proyek |
-| 02_Code | Source code R (script, Rmd) |
-| 03_Data | Dataset harga saham (CSV) |
-| 04_Output | Hasil optimalisasi, grafik, screenshot |
+| 01_Dokumentasi | Laporan PDF, PPT presentasi |
+| 02_Code | Source code R |
+| 03_Data | Dataset harga saham |
+| 04_Output | Hasil optimalisasi, grafik |
 
 ## Kontak
 mnashiruddin.albani23@gmail.com

@@ -10,10 +10,10 @@ Selamat datang di portfolio saya. Berikut adalah daftar project yang telah saya 
 | 02 | Household & Item Request Management System | Laravel, PHP, MySQL |
 | 03 | Drug Needs Analysis with K-Means | R, RStudio |
 | 04 | Customer Segmentation with Hierarchical Clustering | Python, Scikit-learn |
-| 05 | (Dalam pengembangan) | - |
+| 05 | Vehicle License Plate Recognition | Python, OpenCV, EasyOCR |
 | 06 | Online Bus Ticket Reservation System | PHP, MySQL, Bootstrap |
 | 07 | Glass Classification with LVQ | Python, Scikit-learn |
-| 08 | (Dalam pengembangan) | - |
+| 08 | Risk Modeling - Markowitz Portfolio | R, Markowitz Model |
 | 09 | Stock Portfolio App with R Shiny | R, Shiny |
 | 10 | Undergraduate Thesis - Black Litterman Copula | R |
 
