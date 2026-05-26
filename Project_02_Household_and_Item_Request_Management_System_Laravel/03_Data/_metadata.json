@@ -1,0 +1,103 @@
+{
+  "hash": "de167040",
+  "configHash": "08e7be55",
+  "lockfileHash": "ef9ca294",
+  "browserHash": "13b79cd0",
+  "optimized": {
+    "@fullcalendar/core": {
+      "src": "../../@fullcalendar/core/index.js",
+      "file": "@fullcalendar_core.js",
+      "fileHash": "dd3cf52f",
+      "needsInterop": false
+    },
+    "@fullcalendar/daygrid": {
+      "src": "../../@fullcalendar/daygrid/index.js",
+      "file": "@fullcalendar_daygrid.js",
+      "fileHash": "3e9c0cbc",
+      "needsInterop": false
+    },
+    "@fullcalendar/interaction": {
+      "src": "../../@fullcalendar/interaction/index.js",
+      "file": "@fullcalendar_interaction.js",
+      "fileHash": "f434d81b",
+      "needsInterop": false
+    },
+    "@fullcalendar/list": {
+      "src": "../../@fullcalendar/list/index.js",
+      "file": "@fullcalendar_list.js",
+      "fileHash": "73d75889",
+      "needsInterop": false
+    },
+    "@fullcalendar/timegrid": {
+      "src": "../../@fullcalendar/timegrid/index.js",
+      "file": "@fullcalendar_timegrid.js",
+      "fileHash": "ad4774d2",
+      "needsInterop": false
+    },
+    "alpinejs": {
+      "src": "../../alpinejs/dist/module.esm.js",
+      "file": "alpinejs.js",
+      "fileHash": "49b0ce74",
+      "needsInterop": false
+    },
+    "apexcharts": {
+      "src": "../../apexcharts/dist/apexcharts.esm.js",
+      "file": "apexcharts.js",
+      "fileHash": "0fe16b32",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../axios/index.js",
+      "file": "axios.js",
+      "fileHash": "e5e5712a",
+      "needsInterop": false
+    },
+    "flatpickr": {
+      "src": "../../flatpickr/dist/esm/index.js",
+      "file": "flatpickr.js",
+      "fileHash": "bbe03e38",
+      "needsInterop": false
+    },
+    "jsvectormap": {
+      "src": "../../jsvectormap/dist/jsvectormap.esm.js",
+      "file": "jsvectormap.js",
+      "fileHash": "ac383437",
+      "needsInterop": false
+    },
+    "jsvectormap/dist/maps/world": {
+      "src": "../../jsvectormap/dist/maps/world.js",
+      "file": "jsvectormap_dist_maps_world.js",
+      "fileHash": "481b6342",
+      "needsInterop": true
+    },
+    "@alpinejs/persist": {
+      "src": "../../@alpinejs/persist/dist/module.esm.js",
+      "file": "@alpinejs_persist.js",
+      "fileHash": "1fa3a775",
+      "needsInterop": false
+    },
+    "dropzone": {
+      "src": "../../dropzone/dist/dropzone.mjs",
+      "file": "dropzone.js",
+      "fileHash": "e990fe62",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-EIHZRRSC": {
+      "file": "chunk-EIHZRRSC.js"
+    },
+    "chunk-T7UM46HU": {
+      "file": "chunk-T7UM46HU.js"
+    },
+    "chunk-ULJGACYD": {
+      "file": "chunk-ULJGACYD.js"
+    },
+    "chunk-SO6UMF2F": {
+      "file": "chunk-SO6UMF2F.js"
+    },
+    "chunk-PZ5AY32C": {
+      "file": "chunk-PZ5AY32C.js"
+    }
+  }
+}
