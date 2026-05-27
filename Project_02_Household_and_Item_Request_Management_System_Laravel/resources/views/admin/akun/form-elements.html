@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manajemen Pengguna - Admin</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="min-h-screen">
+    <header class="sticky top-0 z-30 border-b border-gray-200 bg-white">
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <div>
+          <p class="text-sm font-medium text-blue-600">Admin Panel</p>
+          <h1 class="text-2xl font-bold text-gray-900">Manajemen Pengguna</h1>
+          <p class="mt-1 text-sm text-gray-500">Kelola seluruh akun pengguna sistem dengan tampilan yang lebih rapi.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="profile.html" class="rounded-xl border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50">Profil Admin</a>
+          <a href="signin.html" class="rounded-xl bg-red-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-600">Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div class="mb-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+          <p class="text-sm text-gray-500">Total Pengguna</p>
+          <p class="mt-2 text-3xl font-bold text-gray-900">30</p>
+          <p class="mt-2 text-sm text-gray-500">Jumlah seluruh akun yang terdaftar di sistem.</p>
+        </div>
+
+        <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+          <p class="text-sm text-gray-500">Pengguna Aktif</p>
+          <p class="mt-2 text-3xl font-bold text-green-600">28</p>
+          <p class="mt-2 text-sm text-gray-500">Akun yang saat ini berstatus aktif dan dapat login.</p>
+        </div>
+
+        <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+          <p class="text-sm text-gray-500">Total Admin</p>
+          <p class="mt-2 text-3xl font-bold text-blue-600">3</p>
+          <p class="mt-2 text-sm text-gray-500">Jumlah akun dengan hak akses administrator.</p>
+        </div>
+      </div>
+
+      <section class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
+        <div class="flex flex-col gap-4 border-b border-gray-200 px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-900">Daftar Pengguna</h2>
+            <p class="mt-1 text-sm text-gray-500">
+              Form tambah user tidak ditampilkan di samping tabel, tetapi dibuka melalui tombol <strong>Tambah Akun</strong>.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <input
+              type="text"
+              placeholder="Cari nama, email, atau NIP..."
+              class="h-11 rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+            />
+
+            <select
+              class="h-11 rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+            >
+              <option>Pusat Pengembangan & Penilaian Kompetensi</option>
+              <option>Pusat Pelatihan</option>
+              <option>Data & Sistem Informasi</option>
+              <option>Umum / Pimpinan, Humas, & Protokol</option>
+              <option>Umum / Rumah Tangga</option>
+              <option>Umum / Keuangan</option>
+              <option>Perencanaan & Kerja Sama</option>
+            </select>
+
+            <button
+              onclick="openModal()"
+              class="h-11 rounded-xl bg-blue-600 px-5 text-sm font-semibold text-white transition hover:bg-blue-700"
+            >
+              + Tambah Akun
+            </button>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200 text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-4 text-left font-semibold text-gray-600">No</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-600">Nama Lengkap</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-600">NIP / ID Pegawai</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-600">Divisi</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-600">No. HP & Email</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-600">Status</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-600">Aksi</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-gray-100 bg-white">
+              <tr>
+                <td class="px-6 py-4">1</td>
+                <td class="px-6 py-4 font-medium text-gray-900">Budi Santoso</td>
+                <td class="px-6 py-4 text-gray-600">PGW001</td>
+                <td class="px-6 py-4">Teknologi Informasi</td>
+                <td class="px-6 py-4">
+                  <div>081234567890</div>
+                  <div class="text-xs text-gray-500">budi.santoso@email.com</div>
+                </td>
+                <td class="px-6 py-4">
+                  <span class="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">Aktif</span>
+                </td>
+                <td class="px-6 py-4">
+                  <div class="flex gap-2">
+                    <button onclick="openModal()" class="rounded-lg border border-blue-200 px-3 py-2 text-xs font-medium text-blue-600 transition hover:bg-blue-50">Edit</button>
+                    <button class="rounded-lg border border-red-200 px-3 py-2 text-xs font-medium text-red-600 transition hover:bg-red-50">Hapus</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="px-6 py-4">2</td>
+                <td class="px-6 py-4 font-medium text-gray-900">Siti Aminah</td>
+                <td class="px-6 py-4 text-gray-600">PGW002</td>
+                <td class="px-6 py-4">Keuangan</td>
+                <td class="px-6 py-4">
+                  <div>081234567891</div>
+                  <div class="text-xs text-gray-500">siti.aminah@email.com</div>
+                </td>
+                <td class="px-6 py-4">
+                  <span class="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">Aktif</span>
+                </td>
+                <td class="px-6 py-4">
+                  <div class="flex gap-2">
+                    <button onclick="openModal()" class="rounded-lg border border-blue-200 px-3 py-2 text-xs font-medium text-blue-600 transition hover:bg-blue-50">Edit</button>
+                    <button class="rounded-lg border border-red-200 px-3 py-2 text-xs font-medium text-red-600 transition hover:bg-red-50">Hapus</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="px-6 py-4">3</td>
+                <td class="px-6 py-4 font-medium text-gray-900">Ahmad Wijaya</td>
+                <td class="px-6 py-4 text-gray-600">PGW003</td>
+                <td class="px-6 py-4">Sumber Daya Manusia</td>
+                <td class="px-6 py-4">
+                  <div>081234567892</div>
+                  <div class="text-xs text-gray-500">ahmad.wijaya@email.com</div>
+                </td>
+                <td class="px-6 py-4">
+                  <span class="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">Aktif</span>
+                </td>
+                <td class="px-6 py-4">
+                  <div class="flex gap-2">
+                    <button onclick="openModal()" class="rounded-lg border border-blue-200 px-3 py-2 text-xs font-medium text-blue-600 transition hover:bg-blue-50">Edit</button>
+                    <button class="rounded-lg border border-red-200 px-3 py-2 text-xs font-medium text-red-600 transition hover:bg-red-50">Hapus</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="px-6 py-4">4</td>
+                <td class="px-6 py-4 font-medium text-gray-900">Dewi Kartika</td>
+                <td class="px-6 py-4 text-gray-600">PGW004</td>
+                <td class="px-6 py-4">Pemasaran</td>
+                <td class="px-6 py-4">
+                  <div>081234567893</div>
+                  <div class="text-xs text-gray-500">dewi.kartika@email.com</div>
+                </td>
+                <td class="px-6 py-4">
+                  <span class="rounded-full bg-yellow-50 px-3 py-1 text-xs font-medium text-yellow-700">Nonaktif</span>
+                </td>
+                <td class="px-6 py-4">
+                  <div class="flex gap-2">
+                    <button onclick="openModal()" class="rounded-lg border border-blue-200 px-3 py-2 text-xs font-medium text-blue-600 transition hover:bg-blue-50">Edit</button>
+                    <button class="rounded-lg border border-red-200 px-3 py-2 text-xs font-medium text-red-600 transition hover:bg-red-50">Hapus</button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="px-6 py-4">5</td>
+                <td class="px-6 py-4 font-medium text-gray-900">Eko Prasetyo</td>
+                <td class="px-6 py-4 text-gray-600">PGW005</td>
+                <td class="px-6 py-4">Operasional</td>
+                <td class="px-6 py-4">
+                  <div>081234567894</div>
+                  <div class="text-xs text-gray-500">eko.prasetyo@email.com</div>
+                </td>
+                <td class="px-6 py-4">
+                  <span class="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">Aktif</span>
+                </td>
+                <td class="px-6 py-4">
+                  <div class="flex gap-2">
+                    <button onclick="openModal()" class="rounded-lg border border-blue-200 px-3 py-2 text-xs font-medium text-blue-600 transition hover:bg-blue-50">Edit</button>
+                    <button class="rounded-lg border border-red-200 px-3 py-2 text-xs font-medium text-red-600 transition hover:bg-red-50">Hapus</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex flex-col gap-3 border-t border-gray-200 px-6 py-4 text-sm text-gray-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>Menampilkan 1 sampai 5 dari 30 data</p>
+          <div class="flex items-center gap-2">
+            <button class="rounded-lg border border-gray-300 px-3 py-2 hover:bg-gray-50">Sebelumnya</button>
+            <button class="rounded-lg bg-blue-600 px-3 py-2 text-white">1</button>
+            <button class="rounded-lg border border-gray-300 px-3 py-2 hover:bg-gray-50">2</button>
+            <button class="rounded-lg border border-gray-300 px-3 py-2 hover:bg-gray-50">3</button>
+            <button class="rounded-lg border border-gray-300 px-3 py-2 hover:bg-gray-50">Berikutnya</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="userModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 px-4 py-6">
+    <div class="max-h-[95vh] w-full max-w-3xl overflow-y-auto rounded-3xl bg-white shadow-2xl">
+      <div class="flex items-start justify-between border-b border-gray-200 px-6 py-5">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Tambah Akun</h2>
+          <p class="mt-1 text-sm text-gray-500">Isi data pengguna sesuai kebutuhan admin.</p>
+        </div>
+        <button onclick="closeModal()" class="rounded-xl border border-gray-300 px-3 py-2 text-sm text-gray-600 transition hover:bg-gray-50">Tutup</button>
+      </div>
+
+      <form class="grid gap-5 p-6 md:grid-cols-2">
+        <div class="md:col-span-2">
+          <label class="mb-1.5 block text-sm font-medium text-gray-700">Nama Lengkap</label>
+          <input type="text" placeholder="Masukkan nama lengkap" class="h-12 w-full rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100" />
+        </div>
+
+        <div>
+          <label class="mb-1.5 block text-sm font-medium text-gray-700">NIP / ID Pegawai</label>
+          <input type="text" placeholder="Masukkan NIP / ID Pegawai" class="h-12 w-full rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100" />
+        </div>
+
+        <div>
+          <label class="mb-1.5 block text-sm font-medium text-gray-700">Bagian / Divisi</label>
+          <select class="h-12 w-full rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100">
+            <option>Pusat Pengembangan & Penilaian Kompetensi</option>
+            <option>Pusat Pelatihan</option>
+            <option>Data & Sistem Informasi</option>
+            <option>Umum / Pimpinan, Humas, & Protokol</option>
+            <option>Umum / Rumah Tangga</option>
+            <option>Umum / Keuangan</option>
+            <option>Perencanaan & Kerja Sama</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="mb-1.5 block text-sm font-medium text-gray-700">No. HP</label>
+          <input type="text" placeholder="Masukkan nomor HP" class="h-12 w-full rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100" />
+        </div>
+
+        <div>
+          <label class="mb-1.5 block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" placeholder="Masukkan email" class="h-12 w-full rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100" />
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="mb-1.5 block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" placeholder="Masukkan password" class="h-12 w-full rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100" />
+          <p class="mt-1 text-xs text-gray-500">Password nantinya disimpan dalam bentuk bcrypt hash di backend.</p>
+        </div>
+
+        <div>
+          <label class="mb-2 block text-sm font-medium text-gray-700">Remember Me</label>
+          <label class="inline-flex items-center gap-2 text-sm text-gray-700">
+            <input type="checkbox" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+            Aktifkan remember me
+          </label>
+        </div>
+
+        <div>
+          <label class="mb-1.5 block text-sm font-medium text-gray-700">Auto Logout</label>
+          <select class="h-12 w-full rounded-xl border border-gray-300 px-4 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100">
+            <option>15 Menit</option>
+            <option selected>30 Menit</option>
+            <option>60 Menit</option>
+          </select>
+        </div>
+
+        <div class="md:col-span-2 flex justify-end gap-3 pt-2">
+          <button type="button" onclick="closeModal()" class="rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-50">Batal</button>
+          <button type="submit" class="rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">Simpan Akun</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      const modal = document.getElementById('userModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('userModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    window.addEventListener('click', function (e) {
+      const modal = document.getElementById('userModal');
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
