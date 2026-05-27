@@ -2,6 +2,9 @@
 
 Selamat datang di portfolio saya. Berikut adalah daftar project yang telah saya kerjakan.
 
+## 📄 Portfolio PDF
+[Download Portfolio PDF](https://raw.githubusercontent.com/Albani258/Portofolio_Muhammad-Nashiruddin-Al-Bani/main/Portofolio_Muhammad_Nashiruddin_Al_Bani.pdf)
+
 ## 📊 Daftar Project
 
 | No | Project | Teknologi | Link |
