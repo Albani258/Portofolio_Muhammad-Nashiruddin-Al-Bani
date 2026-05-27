@@ -1,6 +1,6 @@
 ﻿# Portfolio Muhammad Nashiruddin Al Bani
 
-Selamat datang di portfolio saya. Berikut adalah daftar project yang telah saya kerjakan.
+Selamat datang di portfolio saya.
 
 ## 📄 Portfolio PDF
 [Download Portfolio PDF](https://raw.githubusercontent.com/Albani258/Portofolio_Muhammad-Nashiruddin-Al-Bani/main/Portofolio_Muhammad_Nashiruddin_Al_Bani.pdf)
@@ -23,7 +23,3 @@ Selamat datang di portfolio saya. Berikut adalah daftar project yang telah saya 
 ## 📫 Kontak
 - Email: mnashiruddin.albani23@gmail.com
 - GitHub: [Albani258](https://github.com/Albani258)
-
----
-
-*Terima kasih telah mengunjungi portfolio saya!*
