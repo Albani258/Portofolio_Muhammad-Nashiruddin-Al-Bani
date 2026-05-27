@@ -1,7 +1,7 @@
 ﻿# Project 10: Undergraduate Thesis - Black Litterman Copula
 
 ## Ringkasan Proyek
-Evaluasi portofolio dengan Black Litterman Model dan Student-t Copula pada saham IDX30.
+Evaluasi portofolio dengan Black Litterman Model dan Student-t Copula.
 
 ## Teknologi yang Digunakan
 - R

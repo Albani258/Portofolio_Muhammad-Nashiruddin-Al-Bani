@@ -11,7 +11,7 @@ Sistem informasi database pelatihan berbasis web untuk Training Center BPSDM IMP
 - Chart.js
 
 ## Fitur Utama
-- Manajemen data peserta pelatihan
+- Manajemen data peserta pelatihan (Proposed, In Process, Completed)
 - Dashboard interaktif
 - Filtering dan pencarian data
 

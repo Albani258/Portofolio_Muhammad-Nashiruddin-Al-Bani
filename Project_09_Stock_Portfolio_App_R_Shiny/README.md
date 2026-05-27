@@ -11,8 +11,8 @@ Aplikasi web portofolio saham interaktif dengan R Shiny.
 
 ## Fitur Utama
 - Fetch data saham real-time
-- Menghitung rasio keuangan (ROA, ROE, DER, PBV)
-- Optimasi portofolio Markowitz
+- Menghitung rasio keuangan
+- Optimasi portofolio
 
 ## Kontak
 mnashiruddin.albani23@gmail.com

@@ -1,4 +1,4 @@
-﻿# Project 03: Drug Needs Analysis with K-Means
+﻿# Project 03: Drug Needs Analysis with K-Means Clustering
 
 ## Ringkasan Proyek
 Analisis kebutuhan obat menggunakan metode K-Means Clustering.
@@ -12,7 +12,7 @@ Analisis kebutuhan obat menggunakan metode K-Means Clustering.
 ## Tahapan Analisis
 1. Data preparation
 2. Descriptive analysis
-3. Elbow Method untuk menentukan cluster optimal
+3. Elbow Method
 4. Evaluasi model
 
 ## Kontak

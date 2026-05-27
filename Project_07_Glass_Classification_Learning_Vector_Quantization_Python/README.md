@@ -11,7 +11,6 @@ Klasifikasi jenis kaca menggunakan Learning Vector Quantization.
 ## Hasil Evaluasi
 - Akurasi rata-rata: 70%
 - Akurasi tertinggi: 78.57%
-- Validasi: 5-Fold Cross Validation
 
 ## Kontak
 mnashiruddin.albani23@gmail.com
