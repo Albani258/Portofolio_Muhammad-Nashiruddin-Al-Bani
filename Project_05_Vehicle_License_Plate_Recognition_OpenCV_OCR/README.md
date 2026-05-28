@@ -1,31 +1,32 @@
 ﻿# 🚗 Project 05: Vehicle License Plate Recognition using OpenCV & OCR
 
-## 📋 Ringkasan Proyek
-Pengembangan sistem parkir otomatis dengan deteksi dan pengenalan plat nomor kendaraan menggunakan **OpenCV** (image processing) dan **EasyOCR** (text extraction).
+## 📋 Project Overview
+Development of an automated parking system with license plate detection and recognition using **OpenCV** (image processing) and **EasyOCR** (text extraction).
 
-## 🚀 Teknologi yang Digunakan
-- Python
-- OpenCV
-- EasyOCR
-- NumPy
-- Matplotlib
+## 🚀 Technologies Used
+| Technology | Description |
+|------------|-------------|
+| Python | Programming language |
+| OpenCV | Image processing |
+| EasyOCR | Optical Character Recognition |
+| NumPy | Array operations |
 
-## 📊 Hasil Akurasi
-> **83.85%** (testing pada 15 gambar real)
+## 📊 Accuracy Results
+**83.85%** (tested on 15 real images)
 
-## 🔧 Metode yang Digunakan
+## 🔧 Methods Used
 - Image preprocessing (grayscale, resizing, noise reduction)
 - Plate localization (contour detection)
 - Character segmentation
 - Text recognition (EasyOCR)
 
-## 📁 Struktur Folder
-| Folder | Isi |
-|--------|-----|
-| `01_Dokumentasi` | Laporan, presentasi, artikel |
-| `02_Code` | Script Python, Jupyter notebook |
-| `03_Data` | Dataset gambar plat kendaraan |
-| `04_Output` | Hasil deteksi plat |
+## 📁 Folder Structure
+| Folder | Contents |
+|--------|----------|
+| `01_Dokumentasi` | Reports, presentations, articles |
+| `02_Code` | Python scripts, Jupyter notebooks |
+| `03_Data` | License plate image dataset |
+| `04_Output` | Detection results |
 
-## 📧 Kontak
+## 📧 Contact
 mnashiruddin.albani23@gmail.com

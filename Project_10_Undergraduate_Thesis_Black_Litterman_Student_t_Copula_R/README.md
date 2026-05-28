@@ -1,40 +1,39 @@
 ﻿# 🎓 Project 10: Undergraduate Thesis - Black Litterman Portfolio with Student-t Copula
 
-## 📋 Ringkasan Proyek
-Evaluasi kinerja portofolio dengan membandingkan **Original Black-Litterman Model** dan **Modified Black-Litterman Model** dengan pendekatan **Student-t Copula** pada saham IDX30.
+## 📋 Project Overview
+Performance evaluation of investment portfolios comparing the **Original Black-Litterman Model** and the **Modified Black-Litterman Model** with a **Student-t Copula** approach on IDX30 stocks.
 
-## 🚀 Teknologi yang Digunakan
-- R
-- CAPM (Capital Asset Pricing Model)
-- VECM (Vector Error Correction Model)
-- Student-t Copula
+## 🚀 Technologies Used
+| Technology | Description |
+|------------|-------------|
+| R | Programming language |
+| CAPM | Capital Asset Pricing Model |
+| VECM | Vector Error Correction Model |
+| Student-t Copula | Dependency modeling |
 
 ## 📊 Data Source
-- Monthly closing prices of IDX30
-- Periode: May 2016 – September 2024
+- Monthly closing prices of IDX30 stocks
+- Period: May 2016 – September 2024
 
-## 🔬 Tahapan Penelitian
+## 🔬 Research Steps
+1. Data preparation
+2. Equilibrium return estimation with CAPM
+3. Investor views generation via VECM
+4. Dependency modeling using Student-t Copula
+5. Portfolio rebalancing with 90-month rolling window
+6. Performance evaluation
 
-| Tahap | Metode |
-|-------|--------|
-| 1 | Data preparation |
-| 2 | Equilibrium return estimation dengan CAPM |
-| 3 | Investor views generation via VECM |
-| 4 | Dependency modeling menggunakan Student-t Copula |
-| 5 | Portfolio rebalancing dengan 90-month rolling window |
-| 6 | Performance evaluation |
-
-## 📈 Evaluasi Kinerja
+## 📈 Evaluation Metrics
 - Sharpe Ratio
 - Risk & Return metrics
 
-## 📁 Struktur Folder
-| Folder | Isi |
-|--------|-----|
-| `01_Dokumentasi` | Skripsi lengkap (PDF), presentasi |
-| `02_Code` | Script R untuk analisis |
-| `03_Data` | Dataset IDX30 |
-| `04_Output` | Grafik hasil penelitian |
+## 📁 Folder Structure
+| Folder | Contents |
+|--------|----------|
+| `01_Dokumentasi` | Full thesis (PDF), presentations |
+| `02_Code` | R scripts for analysis |
+| `03_Data` | IDX30 dataset |
+| `04_Output` | Research result graphs |
 
-## 📧 Kontak
+## 📧 Contact
 mnashiruddin.albani23@gmail.com

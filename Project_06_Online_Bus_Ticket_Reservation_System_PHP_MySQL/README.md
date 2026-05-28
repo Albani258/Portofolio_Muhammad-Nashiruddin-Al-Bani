@@ -1,36 +1,30 @@
 ﻿# 🚌 Project 06: Online Bus Ticket Reservation System
 
-## 📋 Ringkasan Proyek
-Sistem pemesanan tiket bus online yang memungkinkan penumpang memesan tiket dengan mudah dan admin mengelola bus, jadwal, rute, dan transaksi.
+## 📋 Project Overview
+An online bus ticket booking system that allows passengers to reserve tickets easily and enables administrators to manage buses, schedules, routes, and transactions efficiently.
 
-## 🚀 Teknologi yang Digunakan
-- PHP
-- MySQL
-- HTML, CSS, JavaScript
-- Bootstrap
-- XAMPP
+## 🚀 Technologies Used
+| Technology | Description |
+|------------|-------------|
+| PHP | Backend |
+| MySQL | Database |
+| HTML, CSS, JavaScript | Frontend |
+| Bootstrap | CSS Framework |
 
-## 🗄️ Struktur Database
+## 🗄️ Database Structure
 **Entities**: Passenger, Bus, Driver, Schedule, City, Ticket Reservation, Admin
 
-## 📦 Modul Sistem
+## 📦 System Modules
+- **Admin Module**: CRUD operations for buses, routes, cities, passengers, transactions, schedule management
+- **User Module**: Online booking, real-time ticket availability, automated price calculation
 
-| Modul | Fitur |
-|-------|-------|
-| **Admin Module** | CRUD buses, routes, cities, passengers, transactions, schedule management |
-| **User Module** | Online booking, real-time ticket availability, automated price calculation |
+## 📁 Folder Structure
+| Folder | Contents |
+|--------|----------|
+| `01_Dokumentasi` | Reports, presentations, user manuals |
+| `02_Code` | PHP source code |
+| `03_Data` | SQL databases |
+| `04_Output` | System screenshots |
 
-## 🔒 Fitur Keamanan
-- Admin login/logout dengan session handling
-- Validasi input dan error handling
-
-## 📁 Struktur Folder
-| Folder | Isi |
-|--------|-----|
-| `01_Dokumentasi` | Laporan, presentasi, user manual |
-| `02_Code` | Source code PHP |
-| `03_Data` | Database SQL |
-| `04_Output` | Screenshot sistem |
-
-## 📧 Kontak
+## 📧 Contact
 mnashiruddin.albani23@gmail.com

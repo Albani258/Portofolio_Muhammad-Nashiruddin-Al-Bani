@@ -1,38 +1,30 @@
 ﻿# 📱 Project 09: Stock Portfolio App with R Shiny
 
-## 📋 Ringkasan Proyek
-Aplikasi web portofolio saham interaktif yang mengambil data dari Yahoo Finance, menghitung rasio keuangan, dan melakukan optimasi portofolio.
+## 📋 Project Overview
+An interactive web-based stock portfolio application that fetches real-time data from Yahoo Finance, calculates financial ratios, and performs portfolio optimization.
 
-## 🚀 Teknologi yang Digunakan
-- R
-- R Shiny
-- quantmod, tidyquant
-- PerformanceAnalytics
-- PortfolioAnalytics
-- Yahoo Finance API
+## 🚀 Technologies Used
+| Technology | Description |
+|------------|-------------|
+| R | Programming language |
+| R Shiny | Web framework |
+| quantmod, tidyquant | Stock data |
+| PerformanceAnalytics | Portfolio analysis |
+| Yahoo Finance API | Data source |
 
-## ✨ Fitur Utama
-- Fetch data saham real-time dari Yahoo Finance
-- Menghitung rasio keuangan (ROA, ROE, DER, PBV)
+## ✨ Key Features
+- Real-time stock data from Yahoo Finance
+- Financial ratio calculation (ROA, ROE, DER, PBV)
 - Mean-Variance Portfolio Optimization (Markowitz)
-- Visualisasi interaktif
+- Interactive visualizations
 
-## 📊 Output
-- Stock return plots
-- Financial ratio tables
-- Descriptive statistics
-- Optimal portfolio weights (bar chart & table)
+## 📁 Folder Structure
+| Folder | Contents |
+|--------|----------|
+| `01_Dokumentasi` | Reports, presentations, user guides |
+| `02_Code` | R Shiny scripts (app.R, ui.R, server.R) |
+| `03_Data` | Sample stock datasets |
+| `04_Output` | Dashboard screenshots |
 
-## 🚀 Deployment
-Shinyapps.io / Shiny Server
-
-## 📁 Struktur Folder
-| Folder | Isi |
-|--------|-----|
-| `01_Dokumentasi` | Laporan, presentasi, user guide |
-| `02_Code` | Script R Shiny (app.R, ui.R, server.R) |
-| `03_Data` | Dataset saham contoh |
-| `04_Output` | Screenshot dashboard |
-
-## 📧 Kontak
+## 📧 Contact
 mnashiruddin.albani23@gmail.com

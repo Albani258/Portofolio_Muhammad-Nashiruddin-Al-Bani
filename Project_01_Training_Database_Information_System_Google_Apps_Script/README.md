@@ -1,34 +1,34 @@
 ﻿# 📊 Project 01: Training Database Information System
 
-## 📋 Ringkasan Proyek
-Sistem informasi database pelatihan berbasis web untuk **Training Center BPSDM IMPAS** Kementerian Imigrasi dan Pemasyarakatan RI.
+## 📋 Project Overview
+A web-based training database information system for the **Training Center of BPSDM IMPAS**, Ministry of Immigration and Corrections of the Republic of Indonesia.
 
-## 🚀 Teknologi yang Digunakan
-- Google Apps Script
-- JavaScript
-- HTML, CSS
-- Google Spreadsheet
-- Chart.js
+## 🚀 Technologies Used
+| Technology | Description |
+|------------|-------------|
+| Google Apps Script | Development platform |
+| JavaScript | Programming language |
+| HTML, CSS | Frontend |
+| Google Spreadsheet | Database |
+| Chart.js | Data visualization |
 
-## ✨ Fitur Utama
-- Manajemen data peserta pelatihan (Proposed, In Process, Completed)
-- Dashboard interaktif dengan summary cards dan chart
-- Filtering dan pencarian data peserta
-- Klasifikasi kategori pelatihan
+## ✨ Key Features
+- Manage training participant data (Proposed, In Process, Completed)
+- Interactive dashboard with summary cards and charts
+- Data filtering and search functionality
 
-## 👨‍💻 Peran Saya
+## 👨‍💻 My Role
 - Team Leader
-- Perancang workflow sistem
-- Desain struktur database
-- Koordinasi implementasi
+- System workflow design
+- Database structure design
 
-## 📁 Struktur Folder
-| Folder | Isi |
-|--------|-----|
-| `01_Dokumentasi` | Laporan proyek, presentasi, screenshot |
-| `02_Code` | Source code Google Apps Script |
-| `03_Data` | Dataset pelatihan |
-| `04_Output` | Hasil dashboard, grafik |
+## 📁 Folder Structure
+| Folder | Contents |
+|--------|----------|
+| `01_Dokumentasi` | Reports, presentations, screenshots |
+| `02_Code` | Google Apps Script source code |
+| `03_Data` | Training datasets |
+| `04_Output` | Dashboard results, graphs |
 
-## 📧 Kontak
+## 📧 Contact
 mnashiruddin.albani23@gmail.com

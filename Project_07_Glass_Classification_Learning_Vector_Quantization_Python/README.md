@@ -1,40 +1,36 @@
 ﻿# 🔬 Project 07: Glass Classification using Learning Vector Quantization
 
-## 📋 Ringkasan Proyek
-Klasifikasi jenis kaca berdasarkan indeks bias dan komposisi kimia menggunakan **Learning Vector Quantization (LVQ)** untuk mendukung investigasi forensik.
+## 📋 Project Overview
+Classification of glass types based on refractive index and elemental composition using **Learning Vector Quantization (LVQ)** to support forensic investigations.
 
-## 🚀 Teknologi yang Digunakan
-- Python
-- NumPy, Pandas
-- Scikit-learn
-- Matplotlib
+## 🚀 Technologies Used
+| Technology | Description |
+|------------|-------------|
+| Python | Programming language |
+| NumPy, Pandas | Data processing |
+| Scikit-learn | Machine learning |
+| Matplotlib | Visualization |
 
 ## 📊 Dataset
-- **Sumber**: UCI Glass Dataset
-- **Jumlah sampel**: 214
-- **Fitur**: 10 fitur numerik
-- **Target**: 7 kategori
+- **Source**: UCI Glass Dataset
+- **Samples**: 214
+- **Features**: 10 numerical features
+- **Target**: 7 categories
 
-## 📈 Hasil Evaluasi
-
-| Metrik | Nilai |
+## 📈 Evaluation Results
+| Metric | Value |
 |--------|-------|
-| Validasi | 5-Fold Cross Validation |
-| Akurasi rata-rata | 70% |
-| Akurasi tertinggi | 78.57% |
+| Validation | 5-Fold Cross Validation |
+| Average Accuracy | 70% |
+| Highest Accuracy | 78.57% |
 
-## ⚙️ Parameter LVQ
-- Learning rate: 0.1
-- Epoch: 25
-- Representative subsets: 50
+## 📁 Folder Structure
+| Folder | Contents |
+|--------|----------|
+| `01_Dokumentasi` | Reports, presentations |
+| `02_Code` | Python scripts |
+| `03_Data` | Glass dataset |
+| `04_Output` | Confusion matrix, accuracy graphs |
 
-## 📁 Struktur Folder
-| Folder | Isi |
-|--------|-----|
-| `01_Dokumentasi` | Laporan, presentasi |
-| `02_Code` | Script Python |
-| `03_Data` | Dataset glass |
-| `04_Output` | Confusion matrix, grafik akurasi |
-
-## 📧 Kontak
+## 📧 Contact
 mnashiruddin.albani23@gmail.com
