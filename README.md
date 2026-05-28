@@ -1,6 +1,6 @@
 ﻿# 🌟 Portfolio of Muhammad Nashiruddin Al Bani
 
-Welcome to my portfolio. Here is a collection of projects I have worked on in **Data Science**, **Machine Learning**, **Web Development**, and **Risk Modeling**.
+Welcome to my portfolio. I am **Data Analyst, Data Scientist, Statistician, Research Assistant, Actuary, Economics**. Here is a collection of projects I have worked on in **Data Science**, **Machine Learning**, **Web Development**, and **Risk Modeling**.
 
 ---
 
